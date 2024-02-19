@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+$height: 542px;
+$weigth: 263px;
+.mainCanva {
+  background-color: rgba(0, 0, 0, 0.822);
+  padding: 10px;
+  display: flex;
+ flex-wrap: wrap;
+ gap: 1rem;
+}
+
+.canva {
+  // background-color: red;
+  // border: 2px solid red;
+  background-color: rgba(240, 248, 255, 0.4);
+  height: 700pxt;
+  width: $weigth;
+  margin: auto;
+  border-radius: 32px;
+  overflow: auto;
+  position: relative;
+}
+
+
+
+.sample-canvas{
+  // border: 1px solid red;
+  height: $height;
+  width: $weigth;
+  border-radius: 33px;
+  // z-index: 11;
+  position: relative;
+  width: 100%;
+}
