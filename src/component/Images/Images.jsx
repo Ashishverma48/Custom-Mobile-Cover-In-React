@@ -13,7 +13,7 @@ function Images() {
   };
 
   return (
-    <div className="border px-10 py-5">
+    <div className="border px-10 py-5 hidden md:bl">
       <h2 className="font-semibold text-xl text-amber-500 py-1">
         Select Upload
       </h2>

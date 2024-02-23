@@ -6,18 +6,18 @@ import { ImageProvider } from "./context/Context";
 import "./style.scss";
 function App() {
   const [image, setImage] = useState(null);
-  const [imagePath,setImagePath] = useState(null)
+  const [imagePath, setImagePath] = useState(null);
   const addImage = (img) => {
     setImage(img);
   };
-  const addImagePath = (img)=>{
-    setImagePath(img)
-  }
+  const addImagePath = (img) => {
+    setImagePath(img);
+  };
 
   // console.log('app',image);
 
   return (
-    <ImageProvider value={{ addImage, image ,imagePath,addImagePath}}>
+    <ImageProvider value={{ addImage, image, imagePath, addImagePath }}>
       <div className="mainCanva">
         <Images />
         <Canvas />
