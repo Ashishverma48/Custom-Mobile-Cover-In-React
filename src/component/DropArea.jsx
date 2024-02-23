@@ -6,7 +6,7 @@ import { useImage } from "../context/Context";
 import PhoneForground from "./PhoneForground";
 function DropArea() {
   const { selectedObjects, editor, onReady } = useFabricJSEditor();
-  const { image, imagePath } = useImage(null);
+  const { image, imagePath,addImage ,addImagePath} = useImage(null);
 
   const [imageObject, setImageObject] = useState(null);
 
@@ -44,9 +44,13 @@ function DropArea() {
     }
   }, [imageObject]);
 
+
   const deleteImage = () => {
     setImageObject(null);
     editor.canvas.clear();
+    addImage(null);
+    addImagePath(null)
+
   };
   return (
     <>
