@@ -16,14 +16,14 @@ function Canvas() {
     addImage(event.target.files[0]);
   };
 
-  const handleDownloadClick = () => {
-    html2canvas(canvasRef.current).then((canvas) => {
-      const link = document.createElement("a");
-      link.download = "canvas.png";
-      link.href = canvas.toDataURL();
-      link.click();
-    });
-  };
+  // const handleDownloadClick = () => {
+  //   html2canvas(canvasRef.current).then((canvas) => {
+  //     const link = document.createElement("a");
+  //     link.download = "canvas.png";
+  //     link.href = canvas.toDataURL();
+  //     link.click();
+  //   });
+  // };
   return (
     <div className="flex justify-center flex-col w-full gap-5">
       <div className="canva" ref={canvasRef}>
