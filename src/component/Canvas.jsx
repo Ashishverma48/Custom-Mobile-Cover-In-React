@@ -16,75 +16,26 @@ function Canvas() {
     addImage(event.target.files[0]);
   };
 
-  // const handleDownloadClick = () => {
-  //   html2canvas(canvasRef.current).then((canvas) => {
-  //     const link = document.createElement("a");
-  //     link.download = "canvas.png";
-  //     link.href = canvas.toDataURL();
-  //     link.click();
-  //   });
-  // };
+  const handleDownloadClick = () => {
+    html2canvas(canvasRef.current).then((canvas) => {
+      const link = document.createElement("a");
+      link.download = "canvas.png";
+      link.href = canvas.toDataURL();
+      link.click();
+    });
+  };
   return (
     <div className="flex justify-center flex-col w-full gap-5">
       <div className="canva" ref={canvasRef}>
         <PhoneFrame />
         <DropArea />
       </div>
-      <input
-        type="file"
-        onChange={handleFileChange}
-        className="py-3 px-5 bg-fuchsia-800 rounded-md font-semibold text-white shadow-lg"
-      />
-
-      {/* <button
+      <button
+        className="absolute right-4 top-[100px] py-2 px-9 text-white rounded-sm bg-green-800"
         onClick={handleDownloadClick}
-        className="px-5 py-2  bg-red-300 h-12 w-40 "
       >
-        Download
-      </button> */}
-      <p className="text-center text-white  py-2 font-semibold">Select Image</p>
-      <div className="border p-2 grid grid-cols-2 md:grid-cols-2 gap-3">
-        <div>
-          <img
-            src={lama}
-            alt=""
-            className="w-full"
-            onClick={(e) => {
-              addImagePath(e.target.src);
-            }}
-          />
-        </div>
-        <div>
-          <img
-            src={cacti}
-            alt=""
-            className="w-full"
-            onClick={(e) => {
-              addImagePath(e.target.src);
-            }}
-          />
-        </div>
-        <div>
-          <img
-            src={flowers}
-            alt=""
-            className="w-full"
-            onClick={(e) => {
-              addImagePath(e.target.src);
-            }}
-          />
-        </div>
-        <div>
-          <img
-            src={sunset}
-            alt=""
-            className="w-full"
-            onClick={(e) => {
-              addImagePath(e.target.src);
-            }}
-          />
-        </div>
-      </div>
+        Save
+      </button>
     </div>
   );
 }

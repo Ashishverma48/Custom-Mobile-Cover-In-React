@@ -6,7 +6,7 @@ import { useImage } from "../context/Context";
 import PhoneForground from "./PhoneForground";
 function DropArea() {
   const { selectedObjects, editor, onReady } = useFabricJSEditor();
-  const { image, imagePath,addImage ,addImagePath} = useImage(null);
+  const { image, imagePath, addImage, addImagePath } = useImage(null);
 
   const [imageObject, setImageObject] = useState(null);
 
@@ -44,13 +44,11 @@ function DropArea() {
     }
   }, [imageObject]);
 
-
   const deleteImage = () => {
     setImageObject(null);
     editor.canvas.clear();
     addImage(null);
-    addImagePath(null)
-
+    addImagePath(null);
   };
   return (
     <>
@@ -62,7 +60,11 @@ function DropArea() {
         <FabricJSCanvas className="sample-canvas" onReady={onReady} />
       </div>
       <PhoneForground />
-      <div className="fixed top-6 right-4" onClick={deleteImage}>
+      <div
+        className="fixed flex bg-red-950  text-white cursor-pointer gap-3  py-2 px-4 rounded-sm shadow-md top-6 right-4"
+        onClick={deleteImage}
+      >
+        <button>Clear</button>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

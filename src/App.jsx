@@ -18,11 +18,10 @@ function App() {
 
   return (
     <ImageProvider value={{ addImage, image, imagePath, addImagePath }}>
-      <div className="mainCanva">
+      <div className=" flex bg-slate-500 flex-wrap-reverse md:flex-nowrap  p-5  ">
         <Images />
         <Canvas />
       </div>
-      
     </ImageProvider>
   );
 }

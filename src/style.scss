@@ -11,8 +11,8 @@ $weigth: 263px;
   background-color: rgba(0, 0, 0, 0.822);
   padding: 10px;
   display: flex;
- flex-wrap: wrap;
- gap: 1rem;
+  width: 100%;
+  gap: 1rem;
 }
 
 .canva {
@@ -27,9 +27,7 @@ $weigth: 263px;
   position: relative;
 }
 
-
-
-.sample-canvas{
+.sample-canvas {
   // border: 1px solid red;
   height: $height;
   width: $weigth;

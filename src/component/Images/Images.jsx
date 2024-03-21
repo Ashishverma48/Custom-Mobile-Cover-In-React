@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { useImage } from "../../context/Context";
-import cacti from "../../../public/backgrounds/cacti.jpg";
-import flowers from "../../../public/backgrounds/flowers.jpg";
-import star from "../../../public/backgrounds/star.jpeg";
-import sunset from "../../../public/backgrounds/sunset.jpg";
+import { IMAGES } from "../../contant";
 
 function Images() {
   const { addImage, addImagePath } = useImage();
@@ -13,51 +10,23 @@ function Images() {
   };
 
   return (
-    <div className="border px-10 py-5 hidden md:bl">
+    <div className="border px-7 py-3 mt-3 md:mt-0 shadow-md rounded-sm w-full md:w-1/2">
       <h2 className="font-semibold text-xl text-amber-500 py-1">
         Select Upload
       </h2>
-      <div className="grid grid-cols-2 gap-2">
-        <div>
-          <img
-            src={cacti}
-            className="w-full border h-48"
-            alt=""
-            onClick={(e) => {
-              addImagePath(e.target.src);
-            }}
-          />
-        </div>
-        <div>
-          <img
-            src={flowers}
-            className="w-full border  h-48"
-            alt=""
-            onClick={(e) => {
-              addImagePath(e.target.src);
-            }}
-          />
-        </div>
-        <div>
-          <img
-            src={star}
-            className="w-full border h-48"
-            alt=""
-            onClick={(e) => {
-              addImagePath(e.target.src);
-            }}
-          />
-        </div>
-        <div>
-          <img
-            src={sunset}
-            className="w-full border  h-48"
-            alt=""
-            onClick={(e) => {
-              addImagePath(e.target.src);
-            }}
-          />
-        </div>
+      <div className="grid grid-cols-3 gap-2">
+        {IMAGES?.map((src, index) => (
+          <div>
+            <img
+              src={src}
+              className=" h-40  w-full object-contain object-center rounded-sm"
+              alt=""
+              onClick={(e) => {
+                addImagePath(e.target.src);
+              }}
+            />
+          </div>
+        ))}
       </div>
       <div className="mt-3">
         <label htmlFor="" className="text-white text-[18px]">
